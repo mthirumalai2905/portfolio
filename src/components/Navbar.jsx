@@ -15,11 +15,11 @@ const Navbar = () => {
   const getHrColor = () => {
     switch (selectedSection) {
       case 'work':
-        return 'red'; // Color for Work section
+        return 'green'; // Color for Work section
       case 'resume':
         return 'blue'; // Color for Resume section
       case 'blog':
-        return 'green'; // Color for Blog section
+        return 'purple'; // Color for Blog section
       case 'cp':
         return 'orange'; // Color for CP section
       default:
@@ -45,6 +45,8 @@ const Navbar = () => {
         {selectedSection === 'blog' && <Blog />}
         {selectedSection === 'cp' && <CP />}
       </div>
+
+     
     </div>
   );
 };

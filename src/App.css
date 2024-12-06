@@ -193,3 +193,8 @@
   cursor: pointer;
 }
 
+.main {
+  background-image: radial-gradient(circle, rgb(228, 234, 241) 2px, #fff 2px);
+  background-size: 1.5rem 1.5rem;
+  background-position: center center;
+}
