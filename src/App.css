@@ -1,0 +1,162 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.main{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* App.css */
+
+/* Add this CSS to position the image in the top-right corner */
+.medal {
+  position: absolute; /* Fix it in place, so it stays even when scrolling */
+  top: 35px; /* Adjust top distance from the top of the screen */
+  right: 85px; /* Adjust right distance from the right side */
+  width: 70px; /* Set the size of the image (adjust as needed) */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 10; /* Ensure it stays on top of other elements */
+}
+
+.medal3{
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  width: 70px;
+  height: auto;
+  z-index: 10;
+}
+
+.medal2{
+  position: absolute;
+  top: 35px;
+  right: 165px;
+  width: 70px;
+  height: auto;
+  z-index: 10;
+}
+
+/* Main container */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative; /* Ensure the children are positioned relative to this container */
+}
+
+/* TV container styling */
+.tv-container {
+  position: absolute; /* Make it absolutely positioned */
+  bottom: 20px; /* Distance from the bottom of the page */
+  right: 20px; /* Distance from the right of the page */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #333;
+  border-radius: 15px;
+  background-color: #111; */
+  width: 100px; /* Width of the TV screen */
+  height: 150px; /* Height of the TV screen */
+  padding: 20px;
+}
+
+.tv-screen {
+  display: flex;
+  /* justify-content: center;
+  align-items: center;
+  background-color: #222;
+  border-radius: 10px; */
+  width: 100%;
+  height: 80%;
+}
+
+.pokemon-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.next-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.next-button:hover {
+  background-color: #45a049;
+}
+
+.tv-screen p{
+  color: white;
+}
+.pokeball-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px; /* Adjust to change the distance from the bottom */
+  right: 300px; /* Center it horizontally */
+  transform: translateX(-50%); /* Center the button */
+  padding: 10px;
+}
+
+.pokeball-button img {
+  width: 50px;
+  height: 50px;
+}
+
+.next-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%; /* Align vertically */
+  right: 10px; /* Adjust to move it inside the screen */
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #fff; /* Arrow color */
+}
+
+.next-arrow{
+  margin-top: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.pokemon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.pokemon-image {
+  width: 150px; /* Adjust image size as needed */
+  height: 150px;
+}
+
+.next-arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.next-arrow {
+  width: 50px;  /* Adjust the size of the arrow */
+  cursor: pointer;
+  margin-right: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+

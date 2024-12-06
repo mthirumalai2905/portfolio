@@ -1,0 +1,62 @@
+*{
+    font-family: sans-serif;
+}
+.head{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.center img{
+    width: 75px;
+    border-radius: 100%;
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.icon .left img{
+    width: 40px;
+}
+.icon .right img{
+    width: 41px;
+}
+.skills, .skills2 {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between items */
+    text-align: center;
+  }
+  
+  .skills span, .skills2 span {
+    border: 1px solid rgb(218, 216, 216);
+    padding: 3px 10px; 
+    border-radius: 8px;
+    color: rgb(67, 65, 65);
+    font-size: 14px; 
+    flex: 0 1 auto;
+    white-space: nowrap; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .skills span:hover, 
+.skills2 span:hover {
+  box-shadow: 0 4px 8px rgba(102, 102, 102, 0.2); /* Add a shadow on hover */
+  transform: translateY(-2px); /* Add a slight lifting effect */
+}
+
+.title{
+    margin-bottom: 10px;
+}
+  .bio{
+    font-style: oblique;
+    margin-bottom: 10px;
+  }
+  

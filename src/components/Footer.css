@@ -1,0 +1,58 @@
+/* Footer.css */
+
+/* Style the footer */
+.foot {
+    margin-top: 500px;
+    
+  }
+  
+ /* Footer.css */
+
+/* Style the footer */
+.foot .social-media{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for social media icons */
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon {
+    width: 18px; /* Size of the social icons */
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  .social-icon-x{
+    width: 24px;
+    height: auto;
+    transition: transform 0.3s ease;
+
+  }
+
+  
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-icon-x:hover {
+    transform: scale(1.1);
+  }
+
+  .foot{
+    margin-bottom: 10px;
+  }
+  .foot hr{
+    width: 550px;
+  }
+
+  .foot p{
+    font-size: 15px;
+  }
+
+  
