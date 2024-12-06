@@ -1,6 +1,7 @@
 *{
   margin: 0;
   padding: 0;
+  background-color: #fbfbfb;
 }
 .main{
   margin-top: 10px;
@@ -106,7 +107,7 @@
   cursor: pointer;
   position: absolute;
   bottom: 20px; /* Adjust to change the distance from the bottom */
-  right: 300px; /* Center it horizontally */
+  right: 230px; /* Center it horizontally */
   transform: translateX(-50%); /* Center the button */
   padding: 10px;
 }
@@ -158,5 +159,37 @@
   cursor: pointer;
   margin-right: 40px;
   transition: transform 0.2s ease-in-out;
+}
+
+.pokemon-container {
+  position: relative; /* Allows for absolute positioning inside the container */
+  top: -20px; /* Adjust this value to control how much you want to move it up */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-image {
+  width: 100px; /* Or adjust based on your image size */
+  height: 100px;
+  object-fit: contain;
+}
+
+.pokemon-container p {
+  margin-top: 10px; /* Adjust spacing between the image and the name */
+  color: black;
+  font-style: italic;
+  font-family: cursive;
+}
+
+.next-arrow-button{
+  padding: 2px;
+  background-color: rgb(255, 93, 93);
+  border: none;
+  border-radius: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+  cursor: pointer;
 }
 

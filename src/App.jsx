@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100'); // Fetching data for 100 Pokémon
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=500'); // Fetching data for 100 Pokémon
         const data = await response.json();
         const pokemonData = await Promise.all(
           data.results.map(async (pokemon) => {
@@ -25,7 +25,7 @@ const App = () => {
             const details = await res.json();
             return {
               name: pokemon.name,
-              image: details.sprites.front_default,
+              sprite: details.sprites.versions['generation-v']['black-white'].animated.front_default, // Use animated sprites
             };
           })
         );
@@ -57,7 +57,10 @@ const App = () => {
       <img src={week} alt="Medal" className="medal3" />
 
       {/* Pokéball button to toggle TV container */}
-      <button onClick={toggleTvVisibility} className="pokeball-button">
+      <button 
+        onClick={toggleTvVisibility} 
+        className={`pokeball-button ${showTv ? 'no-bounce' : ''}`} // Add the 'no-bounce' class if showTv is true
+      >
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokéball" />
       </button>
 
@@ -67,9 +70,9 @@ const App = () => {
           <div className="tv-screen">
             {pokemons.length > 0 && (
               <div className="pokemon-container">
-                {/* Displaying Pokémon image and name */}
+                {/* Displaying Pokémon animated sprite */}
                 <img 
-                  src={pokemons[currentImageIndex].image} 
+                  src={pokemons[currentImageIndex].sprite} 
                   alt={pokemons[currentImageIndex].name} 
                   className="pokemon-image" 
                 />
@@ -78,14 +81,11 @@ const App = () => {
             )}
           </div>
 
-          {/* Next arrow to navigate to the next Pokémon */}
+          {/* Next arrow button to navigate to the next Pokémon */}
           <div className="next-arrow-container">
-            <img 
-              src={arrow}  // Path to your arrow image
-              alt="Next"
-              className="next-arrow"
-              onClick={nextImage} 
-            />
+            <button className="next-arrow-button" onClick={nextImage}>
+              Next
+            </button>
           </div>
         </div>
       )}

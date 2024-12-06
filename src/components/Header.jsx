@@ -13,7 +13,7 @@ const Header = () => {
         </div>
         <div className="center">
           <img
-            src="https://imgs.search.brave.com/qr_SFSH5ia5uj_WeddFPuvirJEfL0bolH2AZ4ZyfBAo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzZjL2Vl/L2IxLzZjZWViMTBm/ZWI3ZmJlYjhlN2Q0/Mjc4OGI4NjRmYjc0/LmpwZw"
+            src="https://imgs.search.brave.com/rzEQ7jLNRYWPVICZmcOZ8_kjKHylzPiY6xu6sW6DbyA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTEudGVub3IuY29t/L20vbGNabkZ5S1JY/NWdBQUFBZC9sdWZm/eS1hbmltZS5naWY.gif"
             alt="Center Icon"
           />
         </div>
