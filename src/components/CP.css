@@ -1,0 +1,40 @@
+/* CP.css */
+
+.heatmap-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Color classes for heatmap blocks */
+  .react-calendar-heatmap rect {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    transition: fill 0.3s ease;
+  }
+  
+  .color-empty {
+    fill: #e0e0e0;
+  }
+  
+  .color-1 {
+    fill: #c6e6b3;
+  }
+  
+  .color-2 {
+    fill: #7ec957;
+  }
+  
+  .color-3 {
+    fill: #4caf50;
+  }
+  
+  .color-4 {
+    fill: #388e3c;
+  }
+  
+  .color-5 {
+    fill: #2c6e2c;
+  }
+  
