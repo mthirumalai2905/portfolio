@@ -14,6 +14,8 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import ErrorBoundary from './ErrorBoundary';
+import codechef from '../img/codechef.png';
+import atcoders from '../img/atcoders.png';
 
 ChartJS.register(
   CategoryScale,
@@ -190,14 +192,7 @@ function CP() {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-7xl mx-auto space-y-8">
-        <header className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-2">
-            Competitive Programming Dashboard
-          </h1>
-          <p className="text-gray-600">
-            Track your competitive programming journey across platforms
-          </p>
-        </header>
+      
 
         <div className="space-y-8">
           {/* LeetCode Activity Heatmap */}
@@ -261,8 +256,16 @@ function CP() {
               <p className="text-gray-600">User Status: {atcoderUserStatus.userStatus}</p>
             </div>
           )}
+
+
+          
+          
         </div>
       </div>
+      <div className='remaining'>
+          <div className='codechef'><img src={codechef} /></div>
+          <div className='atcoders'><img src={atcoders} /></div>
+          </div>
     </div>
   );
 }

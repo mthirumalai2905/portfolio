@@ -1,0 +1,148 @@
+/* Resume.css */
+.section {
+    padding: 40px 20px;
+    background-color: #f4f7f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+  .roadmap {
+    position: relative;
+    margin-left: 50px;
+  }
+  
+  .vertical-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #1d3557;
+    z-index: 0;
+  }
+  
+  .roadmap-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    z-index: 1;
+  }
+  
+  .roadmap-item.left {
+    flex-direction: row-reverse;
+  }
+  
+  .roadmap-item.right {
+    flex-direction: row;
+  }
+  
+  .dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #1d3557;
+    position: absolute;
+    left: -15px;
+    z-index: 1;
+  }
+  
+  .roadmap-item.left .dot {
+    left: unset;
+    right: -15px;
+  }
+  
+  .content {
+    margin-left: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  }
+  
+  .roadmap-item.left .content {
+    margin-left: 0;
+    margin-right: 50px;
+  }
+  
+  .content h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1d3557;
+  }
+  
+  .content p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .roadmap-item.left .roadmap-line,
+  .roadmap-item.right .roadmap-line {
+    width: 2px;
+    height: 40px;
+    background-color: #1d3557;
+    position: absolute;
+    left: -25px;
+    z-index: 0;
+  }
+  
+  .roadmap-item.left .roadmap-line {
+    left: unset;
+    right: -25px;
+  }
+  
+  .roadmap-line:first-child {
+    top: 0;
+  }
+  
+  .roadmap-line:last-child {
+    bottom: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .roadmap {
+      margin-left: 20px;
+      padding: 10px;
+    }
+  
+    .roadmap-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .dot {
+      position: static;
+      margin-bottom: 10px;
+    }
+  
+    .content {
+      width: 100%;
+    }
+  
+    .roadmap-line {
+      width: 100%;
+      height: 2px;
+      position: static;
+      top: unset;
+    }
+  
+    .roadmap-item.left .content,
+    .roadmap-item.right .content {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+    }
+  }
+  
