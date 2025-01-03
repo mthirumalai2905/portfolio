@@ -162,4 +162,65 @@
   }
   
 
+  .view-more-container {
+    text-align: center;
+    margin: 20px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #007bff;
+  }
   
+  .arrow {
+    display: inline-block;
+    animation: smooth-bounce 1.5s infinite ease-in-out;
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow.rotate {
+    transform: rotate(180deg);
+  }
+  
+  @keyframes smooth-bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Subtle bounce */
+    }
+  }
+  
+
+/* Work Component CSS */
+.work {
+  text-align: center;
+}
+
+.tech-stack {
+  margin-top: -40px;
+}
+
+.tech-stack h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* Create 8 equal-width columns */
+  gap: 20px; /* Space between icons */
+  justify-items: center; /* Center the icons within each column */
+}
+
+.tech-icon {
+  width: 50px; /* Set a consistent size for each icon */
+  height: 50px; /* Keep the height equal to width for a square shape */
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for both scale and filter */
+  filter: grayscale(100%); /* Start with grayscale */
+}
+
+.tech-icon:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
