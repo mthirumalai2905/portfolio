@@ -9,28 +9,28 @@ import "./Blog.css"; // Import the CSS file
 const Blog = () => {
   const blogs = [
     {
-      title: "Understanding React Hooks",
-      brief: "A complete guide to React Hooks and how they can simplify your code.",
+      title: "Vector Databases",
+      brief: "A vector database is a type of database optimized for storing, indexing, and querying high-dimensional vectors. these vectors often represent data in...",
       coverImage: img1,
     },
     {
-      title: "Building a REST API with Node.js",
-      brief: "Learn how to create a RESTful API using Node.js and Express.",
+      title: "Scaling Whatsapp",
+      brief: "Ever wondered how your WhatsApp messages reach instantly, no matter where you are? Scaling chat systems ensures every message gets through, even with...",
       coverImage: img2,
     },
     {
-      title: "Mastering JavaScript Closures",
-      brief: "A deep dive into closures and how they work in JavaScript.",
+      title: "Scaling Databases",
+      brief: "Clustering Clustering involves connecting multiple servers to work together as a single unit to imprve database performance, scalability, and fault...",
       coverImage: img3,
     },
     {
-      title: "CSS Grid vs Flexbox",
-      brief: "When to use CSS Grid and when to stick with Flexbox? Let's find out.",
+      title: "Why do Databases use B Trees",
+      brief: "when we talk about storage RAM and HardDisks come to the picture Let’s understand there fucntions and how they differ from each...",
       coverImage: img4,
     },
     {
-      title: "Optimizing React Performance",
-      brief: "Best practices to ensure your React apps run efficiently and smoothly.",
+      title: "System Design of Google Docs",
+      brief: "Let’s do a system design of collaborative Editing and scale them Flowchart Functional Requirements Tools for Collaborative Editing Non-Functional...",
       coverImage: img5,
     },
   ];
