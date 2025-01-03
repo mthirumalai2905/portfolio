@@ -5,31 +5,42 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import week from './img/week.svg';
 import month from './img/month.svg';
-import 'font-awesome/css/font-awesome.min.css'; // Import Font Awesome CSS if not using CDN
-import arrow from './img/arrow.webp'; // Your arrow image
+import 'font-awesome/css/font-awesome.min.css';
+import arrow from './img/arrow.webp';
+import Rope from './Rope';
+// Import resume as a static import
+import resumePDF from './img/Thiru2.pdf';
 
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showTv, setShowTv] = useState(false); // State to toggle the visibility of the TV container
+  const [showTv, setShowTv] = useState(false);
+  const [isPulled, setIsPulled] = useState(false);
 
-  // Fetching Pokémon data
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=500'); // Fetching data for 100 Pokémon
+        const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=500');
         const data = await response.json();
         const pokemonData = await Promise.all(
-          data.results.map(async (pokemon) => {
-            const res = await fetch(pokemon.url);
-            const details = await res.json();
-            return {
-              name: pokemon.name,
-              sprite: details.sprites.versions['generation-v']['black-white'].animated.front_default, // Use animated sprites
-            };
+          data.results.map(async (pokemon, index) => {
+            try {
+              const pokemonResponse = await fetch(pokemon.url);
+              const pokemonDetails = await pokemonResponse.json();
+              return {
+                name: pokemon.name,
+                sprite: pokemonDetails.sprites.front_default || `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+              };
+            } catch (error) {
+              console.error(`Error fetching details for ${pokemon.name}:`, error);
+              return {
+                name: pokemon.name,
+                sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
+              };
+            }
           })
         );
-        setPokemons(pokemonData); // Set the fetched Pokémon data
+        setPokemons(pokemonData);
       } catch (error) {
         console.error("Error fetching Pokémon data:", error);
       }
@@ -39,11 +50,32 @@ const App = () => {
   }, []);
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % pokemons.length); // Loop through Pokémon
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % pokemons.length);
   };
 
   const toggleTvVisibility = () => {
-    setShowTv(!showTv); // Toggle TV container visibility
+    setShowTv(!showTv);
+  };
+
+  const handlePull = () => {
+    setIsPulled(true);
+    
+    // Create a temporary link to download the resume
+    try {
+      const link = document.createElement('a');
+      link.href = resumePDF;
+      link.download = 'Thiru2.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading resume:', error);
+    }
+
+    // Reset rope after animation
+    setTimeout(() => {
+      setIsPulled(false);
+    }, 2000);
   };
 
   return (
@@ -51,45 +83,57 @@ const App = () => {
       <Header />
       <Navbar />
 
-      {/* Medals at the top right corner */}
-      <img src={week} alt="Medal" className="medal" />
-      <img src={month} alt="Medal" className="medal2" />
-      <img src={week} alt="Medal" className="medal3" />
+      {/* Medals section */}
+      <div className="medals-container">
+        <img src={week} alt="Weekly Medal" className="medal" />
+        <img src={month} alt="Monthly Medal" className="medal2" />
+        <img src={week} alt="Weekly Medal" className="medal3" />
+      </div>
 
-      {/* Pokéball button to toggle TV container */}
+      {/* Pokeball button */}
       <button 
-        onClick={toggleTvVisibility} 
-        className={`pokeball-button ${showTv ? 'no-bounce' : ''}`} // Add the 'no-bounce' class if showTv is true
+        onClick={toggleTvVisibility}
+        className={`pokeball-button ${showTv ? 'no-bounce' : ''}`}
       >
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="Pokéball" />
+        <img 
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" 
+          alt="Pokéball" 
+        />
       </button>
 
-      {/* TV-like container with images, shown only if showTv is true */}
+      {/* TV container */}
       {showTv && (
         <div className="tv-container">
           <div className="tv-screen">
             {pokemons.length > 0 && (
               <div className="pokemon-container">
-                {/* Displaying Pokémon animated sprite */}
-                <img 
-                  src={pokemons[currentImageIndex].sprite} 
-                  alt={pokemons[currentImageIndex].name} 
-                  className="pokemon-image" 
+                <img
+                  src={pokemons[currentImageIndex].sprite}
+                  alt={pokemons[currentImageIndex].name}
+                  className="pokemon-image"
                 />
-                <p>{pokemons[currentImageIndex].name}</p>
+                <p className="pokemon-name">
+                  {pokemons[currentImageIndex].name.charAt(0).toUpperCase() + 
+                   pokemons[currentImageIndex].name.slice(1)}
+                </p>
               </div>
             )}
           </div>
-
-          {/* Next arrow button to navigate to the next Pokémon */}
           <div className="next-arrow-container">
-            <button className="next-arrow-button" onClick={nextImage}>
+            <button 
+              className="next-arrow-button" 
+              onClick={nextImage}
+              aria-label="Next Pokemon"
+            >
               Next
             </button>
           </div>
         </div>
       )}
 
+      {/* Rope component */}
+      <Rope onPull={handlePull} isPulled={isPulled} />
+      
       <Footer />
     </div>
   );

@@ -4,6 +4,7 @@ import Work from './Work';
 import Resume from './Resume';
 import Blog from './Blog';
 import CP from './CP';
+import Quiz from './Quiz';
 
 const Navbar = () => {
   const [selectedSection, setSelectedSection] = useState(''); // Store the selected section
@@ -22,6 +23,8 @@ const Navbar = () => {
         return 'purple'; // Color for Blog section
       case 'cp':
         return 'orange'; // Color for CP section
+      case 'quiz':  
+        return 'red'; // Color for Quiz section
       default:
         return 'black'; // Default color
     }
@@ -34,6 +37,7 @@ const Navbar = () => {
         <a onClick={() => handleNavClick('resume')}>RESUME</a>
         <a onClick={() => handleNavClick('blog')}>BLOG</a>
         <a onClick={() => handleNavClick('cp')}>CP</a>
+        <a onClick={() => handleNavClick('quiz')}>QUIZ</a>
       </div>
       {/* Dynamically change the color of the hr */}
       <hr style={{ borderColor: getHrColor() }} />
@@ -44,6 +48,7 @@ const Navbar = () => {
         {selectedSection === 'resume' && <Resume />}
         {selectedSection === 'blog' && <Blog />}
         {selectedSection === 'cp' && <CP />}
+        {selectedSection === 'quiz' && <Quiz />}
       </div>
 
      

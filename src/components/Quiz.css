@@ -1,0 +1,135 @@
+/* General Styles */
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.quiz-wrapper {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Questions Panel */
+.questions-panel {
+  flex: 3;
+  padding-right: 20px;
+}
+
+.question-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.text-lg {
+  font-size: 18px;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background-color 0.3s;
+}
+
+.option:hover {
+  background-color: #eaeaea;
+}
+
+.option.correct {
+  background-color: #d4edda;
+  border-color: #28a745;
+}
+
+.option.incorrect {
+  background-color: #f8d7da;
+  border-color: #dc3545;
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Question Numbers Panel */
+.question-numbers-panel {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.question-numbers-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.question-number {
+  text-align: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.question-number:hover {
+  background-color: #e0e0e0;
+}
+
+.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.default {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.correct {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.incorrect {
+  background-color: #dc3545;
+  color: #fff;
+}

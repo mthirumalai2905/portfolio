@@ -198,3 +198,175 @@
   background-size: 1.5rem 1.5rem;
   background-position: center center;
 }
+@keyframes sway {
+  0% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(-1deg);
+  }
+}
+
+@keyframes stretch {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(3);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.rope-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: top center;
+  position: fixed; /* Make the rope fixed in position */
+  top: 0; /* Position at the top of the screen */
+  left: 12px; /* Move the rope to the left side */
+}
+
+.rope-container.pulled {
+  animation: stretch 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.rope-segment {
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(90deg, #92400e 0%, #b45309 50%, #92400e 100%);
+  margin-bottom: -1px;
+  transition: transform 0.3s;
+}
+
+.pulled .rope-segment {
+  transform-origin: top center;
+}
+
+.rope-handle {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(45deg, #92400e 0%, #b45309 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.rope-handle:hover {
+  transform: scale(1.1);
+}
+
+.handle-text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #92400e;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.rope-handle:hover .handle-text {
+  opacity: 1;
+}
+@keyframes sway {
+  0% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(-1deg);
+  }
+}
+
+@keyframes stretch {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(3);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.rope-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: top center;
+  position: fixed;
+  top: 0;
+  left: 25px;
+}
+
+.rope-container.pulled {
+  animation: stretch 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.rope-segment {
+  width: 4px;
+  height: 40px;
+  background: linear-gradient(90deg, #92400e 0%, #b45309 50%, #92400e 100%);
+  margin-bottom: -1px;
+  transition: transform 0.3s;
+}
+
+.pulled .rope-segment {
+  transform-origin: top center;
+}
+
+.rope-handle {
+  width: 48px;
+  height: 48px;
+  background: transparent; /* Remove the background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.rope-handle:hover {
+  transform: scale(1.1);
+}
+
+.rope-handle svg {
+  background: transparent; /* Ensure the arrow has no background */
+}
+
+.handle-text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #92400e;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.rope-handle:hover .handle-text {
+  opacity: 1;
+}
