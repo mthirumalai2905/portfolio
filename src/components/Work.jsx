@@ -268,7 +268,6 @@ const Work = () => {
 
       {/* Tech Stacks Section */}
       <div className="tech-stack">
-        <h3>Tech Stack</h3>
         <div className="icons">
           <img src={java} alt="Java" className="tech-icon" />
           <img src={python} alt="Python" className="tech-icon" />
